@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b14" />
+  <meta name="description" content="Dhrubo Pal — website developer, Discord bot developer, and digital creator." />
+  <title>Dhrubo Pal — Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#080b14;--panel:#0e1321;--line:rgba(255,255,255,.1);--text:#f5f7ff;--muted:#9aa5bd;--accent:#8b7cff;--accent2:#53d6c6}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:radial-gradient(ellipse at 80% 0%,rgba(91,76,190,.17),transparent 34%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1060px,calc(100% - 36px));margin:auto}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.6px}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:25px;color:var(--muted);font-size:14px}.navlinks a:hover{color:#fff}
+    .status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:#c9d1e5;font-size:12px;background:rgba(255,255,255,.03)}
+    .dot{height:7px;width:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 12px var(--accent2)}
+    .hero{padding:100px 0 82px;display:grid;grid-template-columns:1.4fr .6fr;align-items:center;gap:40px}
+    .eyebrow{color:var(--accent2);font-size:12px;letter-spacing:2.4px;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,7vw,76px);line-height:1.04;letter-spacing:-3px;max-width:700px}
+    h1 span{background:linear-gradient(90deg,#a69cff,#66e2d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro{color:var(--muted);font-size:17px;max-width:560px;margin:24px 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:var(--text);color:#0a0d17;border-color:var(--text)}.btn:hover{transform:translateY(-2px)}
+    .btn.secondary{background:rgba(255,255,255,.035)}
+    .profile-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(139,124,255,.13),rgba(255,255,255,.025));border-radius:26px;padding:25px;position:relative;overflow:hidden}
+    .profile-card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(83,214,198,.12);filter:blur(35px);right:-65px;top:-65px}
+    .avatar{width:74px;height:74px;border-radius:22px;background:linear-gradient(135deg,#8b7cff,#53d6c6);display:grid;place-items:center;color:#090d17;font:700 26px 'Space Grotesk';margin-bottom:24px;position:relative}
+    .profile-card h2{font:600 23px 'Space Grotesk';position:relative}.handle{color:var(--muted);font-size:14px;margin:4px 0 22px;position:relative}
+    .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+    .stat{padding:13px;border:1px solid var(--line);border-radius:13px;background:rgba(0,0,0,.13)}.stat strong{display:block;font:600 20px 'Space Grotesk'}.stat small{color:var(--muted);font-size:11px}
+    section{padding:36px 0 55px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:23px}
+    .section-head h2{font:600 30px 'Space Grotesk';letter-spacing:-1px}.section-head p{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .card{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:22px;transition:.2s}
+    .card:hover{border-color:rgba(139,124,255,.55);transform:translateY(-3px)}
+    .iconbox{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:rgba(139,124,255,.13);color:#b5adff;font-size:20px;margin-bottom:18px}
+    .card h3{font:600 18px 'Space Grotesk';margin-bottom:8px}.card p{font-size:13px;color:var(--muted)}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:11px;color:#c7cce0;border:1px solid var(--line);border-radius:7px;padding:4px 8px}
+    .project{display:flex;flex-direction:column;min-height:220px}.project .project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.project .project-top .iconbox{margin:0}.project a{color:#b5adff;font-size:13px;margin-top:auto;padding-top:18px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:20px}.about-box{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:25px}.about-box p{color:var(--muted);font-size:14px}.skill-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+    .contact{border:1px solid rgba(139,124,255,.25);background:linear-gradient(120deg,rgba(139,124,255,.12),rgba(83,214,198,.06));border-radius:22px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .contact h2{font:600 27px 'Space Grotesk';margin-bottom:5px}.contact p{color:var(--muted);font-size:14px}
+    footer{padding:28px 0 35px;color:#758099;font-size:12px;border-top:1px solid var(--line);margin-top:55px;display:flex;justify-content:space-between;gap:15px}
+    @media(max-width:760px){.navlinks{gap:13px;font-size:12px}.status{display:none}.hero{grid-template-columns:1fr;padding:68px 0 50px;gap:30px}h1{letter-spacing:-2px}.profile-card{max-width:430px}.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.contact{align-items:flex-start;flex-direction:column}footer{flex-direction:column}}
+    @media(min-width:761px) and (max-width:950px){.grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#home">DC<span>.</span>DEV</a>
+      <div class="navlinks"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div class="status"><span class="dot"></span> Open to opportunities</div>
+    </nav>
+
+    <main id="home">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Developer & Digital Creator</div>
+          <h1>Hey, I'm Dhrubo.<br>I build <span>digital things.</span></h1>
+          <p class="intro">I create clean websites, useful Discord bots, and gaming community setups. I like turning ideas into simple, working projects.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">View my work ↗</a>
+            <a class="btn secondary" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <aside class="profile-card">
+          <div class="avatar">DP</div>
+          <h2>Dhrubo Pal</h2>
+          <div class="handle">@Itz_Dhrubo · DC Dev</div>
+          <div class="mini-stats">
+            <div class="stat"><strong>Web</strong><small>Development</small></div>
+            <div class="stat"><strong>Discord</strong><small>Bots & servers</small></div>
+            <div class="stat"><strong>Minecraft</strong><small>Community projects</small></div>
+            <div class="stat"><strong>Always</strong><small>Learning & building</small></div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="services">
+        <div class="section-head"><h2>What I do</h2><p>Things I can help you build</p></div>
+        <div class="grid">
+          <article class="card"><div class="iconbox">⌘</div><h3>Website Development</h3><p>Responsive websites with a clean look that work on both mobile and desktop.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+          <article class="card"><div class="iconbox">⌁</div><h3>Discord Bots</h3><p>Custom bot features to help communities with tickets, tools, and server tasks.</p><div class="tags"><span class="tag">Node.js</span><span class="tag">Discord.js</span></div></article>
+          <article class="card"><div class="iconbox">✳</div><h3>Discord Server Setup</h3><p>Organized channels, roles, permissions, and a setup that fits your community.</p><div class="tags"><span class="tag">Roles</span><span class="tag">Channels</span><span class="tag">Moderation</span></div></article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head"><h2>Featured projects</h2><p>A few things I've been building</p></div>
+        <div class="grid">
+          <article class="card project"><div class="project-top"><div class="iconbox">⚔</div><span class="tag">Minecraft</span></div><h3>MC Ranked</h3><p>A Minecraft PvP tier-list project focused on player rankings, results, and community testing.</p><a href="https://dsc.gg/vortextier" target="_blank" rel="noreferrer">Community Discord ↗</a></article>
+          <article class="card project"><div class="project-top"><div class="iconbox">⌘</div><span class="tag">Web</span></div><h3>Personal Portfolio</h3><p>This portfolio website — a simple place to show my skills, projects, and contact details.</p><a href="#contact">Get in touch ↗</a></article>
+          <article class="card project"><div class="project-top"><div class="iconbox">◈</div><span class="tag">Discord</span></div><h3>Community Tools</h3><p>Bot and server ideas designed to make gaming communities easier to manage.</p><a href="#contact">Ask about a project ↗</a></article>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-head"><h2>A little about me</h2><p>What I'm learning and working on</p></div>
+        <div class="about">
+          <div class="about-box"><h3 style="font:600 19px 'Space Grotesk';margin-bottom:10px">Who I am</h3><p>I'm Dhrubo, a developer interested in websites, Discord bots, and Minecraft communities. I'm always learning new things and improving my projects step by step.</p></div>
+          <div class="about-box"><h3 style="font:600 19px 'Space Grotesk';margin-bottom:10px">My toolkit</h3><p>Tools and technologies I use or work with:</p><div class="skill-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Discord.js</span><span class="tag">GitHub</span><span class="tag">Vercel</span></div></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact"><div><h2>Have an idea in mind?</h2><p>Need a website, Discord bot, or server setup? Let's talk.</p></div><div class="actions"><a class="btn primary" href="https://discord.com/users/dhrubo.prime" target="_blank" rel="noreferrer">Discord: dhrubo.prime ↗</a><a class="btn secondary" href="https://dsc.gg/vortextier" target="_blank" rel="noreferrer">My community ↗</a></div></div>
+      </section>
+    </main>
+    <footer><span>© <span id="year"></span> Dhrubo Pal · DC Dev</span><span>Made with care, one project at a time.</span></footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
